@@ -14,6 +14,7 @@ body {
   --text-color: #e6edf3;
   --snake-body:#3fb650;
   --food:#f85149;
+  --head-color:darkgreen;
 
   /* spacing */
   --padding-xs: 4px;
@@ -109,4 +110,7 @@ body {
 }
 button:hover{
     transform: scale(1.2);
+}
+.head{
+    background: var(--head-color);
 }
