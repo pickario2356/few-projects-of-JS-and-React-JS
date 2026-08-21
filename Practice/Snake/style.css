@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+:root {
+  --primary-background-color: #0d1117;
+  --secondary-background-color: #64748b;
+  --text-color: #e6edf3;
+  --snake-body:#3fb650;
+  --food:#f85149;
+
+  /* spacing */
+  --padding-xs: 4px;
+  --padding-sm: 8px;
+  --padding-md: 12px;
+  --padding-lg: 16px;
+  --padding-xl: 24px;
+  --padding-2xl: 32px;
+  --padding-3xl: 48px;
+
+  /* border-radius: ; */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+}
+.main,
+.section {
+  height: 100%;
+  width: 100%;
+}
+.section {
+  background: var(--primary-background-color);
+  color: var(--text-color);
+  padding: var(--padding-lg) var(--padding-2xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--padding-lg);
+}
+.infos {
+  display: flex;
+  justify-content: space-between;
+}
+.info {
+  border: 1px solid var(--secondary-background-color);
+  padding: var(--padding-md) var(--padding-lg);
+  border-radius: var(--radius-lg);
+}
+.board {
+  border: 1px solid var(--secondary-background-color);
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns:repeat(auto-fill,minmax(40px,1fr));
+  grid-template-rows: repeat(auto-fill,minmax(40px,1fr));
+}
+.block{
+    height: 40px;
+    width:40px;
+    border: 1px solid var(--secondary-background-color);
+}
+.fill{
+    background-color: var(--snake-body);
+}
+.food{
+    background-color: var(--food);
+}
+.menu{
+    height:100%;
+    width:100%;
+    position: fixed;
+    top:0;
+    left:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(10px);
+}
+.start{
+    color:var(--text-color);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2rem;
+    gap:var(--padding-lg)
+}
+.restart{
+    color:var(--text-color);
+    display: none;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2rem;
+    gap:var(--padding-lg)
+}
+.start button,.restart button{
+    padding: var(--radius-md) var(--padding-lg);
+    font-size: 1.5rem;
+    border-radius: var(--radius-lg);
+    border:none;
+    transition: all 0.3s ease;
+}
+button:hover{
+    transform: scale(1.2);
+}
