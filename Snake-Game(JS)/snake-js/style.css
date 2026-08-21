@@ -1,0 +1,125 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+:root{
+    /* Background */
+    --primary-color-background:#111;
+    --secondary-color-background:#2ed573;
+    --primary-food-color: #ff4757;
+    --primary-head-color:#1e90ff;
+
+    /* text */
+    --text-primary-color:#f1f1f1;
+
+
+    /* Spacing */
+    --padding-xs: 4px;
+    --padding-sm: 8px;
+    --padding-md: 16px;
+    --padding-lg: 24px;
+    --padding-xl: 32px;
+    --padding-2xl: 40px;
+    --padding-3xl: 48px;
+
+    /* border color */
+    --primary-border-color: #333;
+
+    /* border-radius */
+    --border-radius-xs: 4px;
+    --border-radius-sm: 8px; 
+    --border-radius-md: 12px;
+    --border-radius-lg: 16px;
+    --border-radius-xl: 20px;
+    --border-radius-2xl: 24px;
+
+}
+
+html{
+  background: var(--primary-color-background);
+  color:var(--text-primary-color);
+}
+
+main, section{
+  height: 100%;
+  width: 100%;
+}
+section{
+  padding: var(--padding-2xl);
+  display: flex;
+  /* background: #898289; */
+  flex-direction: column;
+  gap:var(--padding-md);
+}
+section .infos{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.info{
+  padding: var(--padding-sm) var(--padding-md);
+  border:1px solid var(--primary-border-color);
+  border-radius: var(--border-radius-md);
+}
+.board{
+  border:1px solid var(--primary-border-color);
+  /* border-radius: var(--border-radius-md); */
+  flex-grow: 1;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(40px, 1fr));
+  grid-template-rows: repeat(auto-fill,minmax(40px, 1fr));
+}
+.block{
+  border:1px solid var(--primary-border-color);
+  border-radius: 50%;
+}
+.fill{
+  background: var(--secondary-color-background);
+}
+.head{
+  background-color: var(--primary-head-color);
+}
+.food{
+  background: var(--primary-food-color)
+}
+.modal{
+  height: 100vh;
+  width:100vw;
+  position: fixed;
+  top:0;
+  left:0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background:rgba(41, 40, 40, 0.777);
+  backdrop-filter:blur(2px);
+}
+.startgame, .gameover{
+  font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--padding-lg);
+}
+.play,.restart{
+  padding:var(--padding-sm) var(--padding-xl);
+  font-size: 1.5rem;
+  border:none;
+  border-radius: var(--border-radius-md);
+  transition: all 0.3s ease ;
+}
+.play:hover,.restart:hover{
+  transform:scale(1.2);
+}
+.gameover{
+  display: none;
+}
