@@ -117,3 +117,70 @@ section .task-column .task button {
   border-radius: var(--radius-xs);
   cursor: pointer;
 }
+.modal{
+  position: fixed;
+  left:0;
+  top:0;
+  height:100vh;
+  width:100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: all 0.3s ease ;
+  visibility: hidden;
+  opacity: 0;
+}
+.modal.active{
+  /* display: flex; */
+  opacity: 1;
+  visibility: visible;
+
+}
+.modal .bg{
+  position: absolute;
+  height: 100%;
+  width:100%;
+  background: rgba(250, 250, 250, 0.077);
+  backdrop-filter: blur(3px);
+  transition: all 0.3s ease;
+}
+.modal .center{
+  background-color: var(--bg-color);
+  width:90%;
+  max-width: 450px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap:var(--padding-sm);
+  z-index: 10;
+  padding: var(--padding-md );
+  border-radius: var(--radius-md);
+  box-shadow:
+   0 4px 10px var(--bg-color),
+   0 4px 10px var(--bg-color),
+   0 4px 10px var(--bg-color),
+   0 4px 10px var(--bg-color),
+   inset 0 1px 1px white;
+}
+.modal .center input , .modal .center textarea{
+  background: var(--border-color);
+  color:var(--text-secondary);
+  border:none;
+  padding:var(--padding-md);
+  font-size: 1.2rem;
+  border-radius: var(--radius-md);
+  /* &::-webkit-scrollbar{display: none;} */
+
+
+}
+.modal .center .add-task-button{
+  background: var(--accent-color);
+  color:var(--bg-color);
+  font-weight: 700;
+  border:none;
+  padding: var(--padding-sm);
+  border-radius: var(--radius-sm);
+  max-width: fit-content;
+  align-self: center;
+}
