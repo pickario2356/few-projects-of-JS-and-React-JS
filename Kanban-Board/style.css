@@ -63,6 +63,10 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: var(--nav-padding);
+  position: sticky;
+  top:0;
+  background: #0f0f1047;
+  backdrop-filter: blur(5px);
 }
 nav button {
   background-color: var(--border-color);
@@ -82,12 +86,15 @@ section {
 section .task-column {
   background: var(--card-bg);
   flex-grow: 1;
+  width: 100%;
+  /* overflow-wrap: anywhere; */
+  word-break: break-all;
   border-radius: var(--radius-md);
   display: flex;
   flex-direction: column;
   gap: var(--padding-md);
   padding: var(--padding-md);
-  transition: all 0.3s ease ;
+  transition: all 0.3s ease;
 }
 section .task-column .heading {
   display: flex;
@@ -102,11 +109,10 @@ section .task-column .task {
   flex-direction: column;
   gap: var(--padding-sm);
   cursor: grab;
-
 }
 section .task-column.hover-over {
-  border:2px dashed var(--accent-color);
-  scale:1.02;
+  border: 2px dashed var(--accent-color);
+  scale: 1.02;
 }
 section .task-column .task button {
   align-self: flex-end;
@@ -117,68 +123,76 @@ section .task-column .task button {
   border-radius: var(--radius-xs);
   cursor: pointer;
 }
-.modal{
+.modal {
   position: fixed;
-  left:0;
-  top:0;
-  height:100vh;
-  width:100vw;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
 
-  transition: all 0.3s ease ;
+  transition: all 0.3s ease;
   visibility: hidden;
   opacity: 0;
 }
-.modal.active{
+.modal.active {
   /* display: flex; */
   opacity: 1;
   visibility: visible;
-
 }
-.modal .bg{
+.modal .bg {
   position: absolute;
   height: 100%;
-  width:100%;
+  width: 100%;
   background: rgba(250, 250, 250, 0.077);
   backdrop-filter: blur(3px);
   transition: all 0.3s ease;
 }
-.modal .center{
+.modal .center {
   background-color: var(--bg-color);
-  width:90%;
+  width: 90%;
   max-width: 450px;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  gap:var(--padding-sm);
+  gap: var(--padding-sm);
   z-index: 10;
-  padding: var(--padding-md );
+  padding: var(--padding-md);
   border-radius: var(--radius-md);
   box-shadow:
-   0 4px 10px var(--bg-color),
-   0 4px 10px var(--bg-color),
-   0 4px 10px var(--bg-color),
-   0 4px 10px var(--bg-color),
-   inset 0 1px 1px white;
+    -10px 10px 10px var(--bg-color),
+    inset 0 1px 1px rgba(255, 255, 255, 0.296),
+    inset -1px 0 1px rgba(255, 255, 255, 0.296);
 }
-.modal .center input , .modal .center textarea{
+.modal .center input,
+.modal .center textarea {
   background: var(--border-color);
-  color:var(--text-secondary);
-  border:none;
-  padding:var(--padding-md);
+  color: var(--text-secondary);
+  border: none;
+  padding: var(--padding-md);
   font-size: 1.2rem;
   border-radius: var(--radius-md);
   /* &::-webkit-scrollbar{display: none;} */
-
-
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.296),
+    inset -1px 0 1px rgba(255, 255, 255, 0.296);
+    transition: all 0.2s ease;
 }
-.modal .center .add-task-button{
+.modal .center input:focus,
+.modal .center textarea:focus {
+    outline: none;
+    scale: 1.03;
+}
+/* :focus → element selected/focused hai, jaise input me cursor aa gaya.
+:active → element abhi press ho raha hai. */
+.modal .center .add-task-button {
   background: var(--accent-color);
-  color:var(--bg-color);
+  color: var(--bg-color);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.44);
   font-weight: 700;
-  border:none;
+  border: none;
   padding: var(--padding-sm);
   border-radius: var(--radius-sm);
   max-width: fit-content;
