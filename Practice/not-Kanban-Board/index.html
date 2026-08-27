@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kanban Board</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
   </head>
   <body>
     <main>
@@ -20,7 +24,6 @@
             <div class="left">To Do</div>
             <div class="right">Count</div>
           </div>
-
         </div>
         <div id="progress" class="task-column">
           <div class="heading">
@@ -40,14 +43,10 @@
     <div class="modal add-new-task">
       <div class="bg"></div>
       <div class="center">
-        <input 
-        type="text" 
-        placeholder="Task Title" 
-        id="text-title-content"
-        />
-        <textarea 
-        placeholder="Enter the decription"
-        id="text-area-content"
+        <input type="text" placeholder="Task Title" id="text-title-content" />
+        <textarea
+          placeholder="Enter the decription"
+          id="text-area-content"
         ></textarea>
         <button id="add-new-task" class="add-task-button">Add new task</button>
       </div>

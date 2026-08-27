@@ -10,13 +10,13 @@ body {
 }
 :root {
   /* color */
-  --bg-color: #0f0f10;
-  --card-bg: #1c1c1f;
-  --text-color: #ededed;
-  --text-secondary: #a0a0a5;
-  --border-color: #2e2e33;
-  --delete-color: #e05252;
-  --accent-color: #6c5ce7;
+  --bg-color: #0d1117;
+  --card-bg: #161b22;
+  --text-color: #e6edf3;
+  --text-secondary: #8b949e;
+  --border-color: #30363d;
+  --delete-color: #f85149;
+  --accent-color: #2dd4bf;
 
   /* Padding scale */
   --nav-padding: 15px 30px;
@@ -64,7 +64,7 @@ nav {
   align-items: center;
   padding: var(--nav-padding);
   position: sticky;
-  top:0;
+  top: 0;
   background: #0f0f1047;
   backdrop-filter: blur(5px);
 }
@@ -123,6 +123,14 @@ section .task-column .task button {
   border-radius: var(--radius-xs);
   cursor: pointer;
 }
+.edit{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.edit i{
+  cursor: pointer;
+}
 .modal {
   position: fixed;
   left: 0;
@@ -138,7 +146,7 @@ section .task-column .task button {
   opacity: 0;
 }
 .modal.active {
-  /* display: flex; */
+  display: flex;
   opacity: 1;
   visibility: visible;
 }
@@ -168,6 +176,7 @@ section .task-column .task button {
 }
 .modal .center input,
 .modal .center textarea {
+  /* width: 300px; */
   background: var(--border-color);
   color: var(--text-secondary);
   border: none;
@@ -178,12 +187,12 @@ section .task-column .task button {
   box-shadow:
     inset 0 1px 1px rgba(255, 255, 255, 0.296),
     inset -1px 0 1px rgba(255, 255, 255, 0.296);
-    transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 .modal .center input:focus,
 .modal .center textarea:focus {
-    outline: none;
-    scale: 1.03;
+  outline: none;
+  scale: 1.03;
 }
 /* :focus → element selected/focused hai, jaise input me cursor aa gaya.
 :active → element abhi press ho raha hai. */
