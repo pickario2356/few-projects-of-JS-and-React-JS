@@ -42,10 +42,21 @@ function createTask(title, content, column) {
     taskElement = task;
   });
   column.appendChild(task);
-  const edit = document.querySelector("i");
+  const edit = task.querySelector("i");
 
   edit.addEventListener("click", () => {
-    
+    const editable = task.querySelectorAll("h2,p");
+    editable.forEach((data) => {
+      data.setAttribute("contenteditable", "true");
+
+      data.addEventListener("blur", () => {
+        const editable = task.querySelectorAll("h2,p");
+        editable.forEach((data) => {
+          data.setAttribute("contenteditable", "false");
+          updateCount();
+        });
+      });
+    });
   });
 
   const removeTask = task.querySelector("button");

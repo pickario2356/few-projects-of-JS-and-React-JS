@@ -75,6 +75,10 @@ nav button {
   padding: var(--padding-sm) var(--padding-md);
   border-radius: var(--radius-xs);
   cursor: pointer;
+  transition: all 0.3s ease ;
+}
+nav button:hover{
+  scale:1.2;
 }
 section {
   padding: var(--section-padding);
@@ -206,4 +210,12 @@ section .task-column .task button {
   border-radius: var(--radius-sm);
   max-width: fit-content;
   align-self: center;
+  transition: background 0.3s ease,
+  scale 0.1s ease  ;
+}
+.modal .center .add-task-button:hover{
+   background: #35fbe1;
+}
+.modal .center .add-task-button:active{
+  scale:0.9;
 }
