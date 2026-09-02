@@ -121,3 +121,7 @@ main section .right .filter input::-webkit-slider-runnable-track {
   background: var(--bg-active-color);
   height: 3px;
 }
+canvas{
+  background: #000;
+  
+}

@@ -1,3 +1,4 @@
+const filterContainer = document.querySelector(".filters");
 const filters = {
   brightness: {
     value: 100,
@@ -17,44 +18,40 @@ const filters = {
     max: 200,
     unit: "%",
   },
+  opacity: {
+    value: 100,
+    min: 0,
+    max: 100,
+    unit: "%",
+  },
   blur: {
     value: 0,
     min: 0,
     max: 20,
     unit: "px",
   },
-  opacity: {
-    value: 100,
-    min: 0,
-    max: 200,
-    unit: "%",
-  },
+
   hueRotation: {
     value: 0,
     min: 0,
     max: 360,
     unit: "deg",
   },
-  saturation: {
-    value: 100,
-    min: 0,
-    max: 200,
-    unit: "%",
-  },
+
   invert: {
-    value: 100,
+    value: 0,
     min: 0,
     max: 200,
     unit: "%",
   },
   sepia: {
-    value: 100,
+    value: 0,
     min: 0,
     max: 200,
     unit: "%",
   },
   grayscale: {
-    value: 100,
+    value: 0,
     min: 0,
     max: 200,
     unit: "%",
@@ -71,15 +68,26 @@ function createFilterElement(name, value, min, max, unit = "%") {
   input.min = min;
   input.max = max;
 
-  const p = document.createElement("P")
-  p.innerText=name;
+  const p = document.createElement("P");
+  p.innerText = name;
 
-  div.appendChild(input)
-  div.appendChild(p)
+  div.appendChild(p);
+  div.appendChild(input);
+
+  return div;
 }
 
-Object.keys(filters).forEach(filter=>{
-    // console.log(filters)
-    // console.log(filter)
-    console.log(filter,filters[filter])
-})
+Object.keys(filters).forEach((filter) => {
+  // console.log(filters)
+  // console.log(filter)
+  // console.log(filter,filters[filter])
+
+  const filterElement = createFilterElement(
+    filter,
+    filters[filter].value,
+    filters[filter].min,
+    filters[filter].max,
+    filters[filter].unit,
+  );
+  filterContainer.appendChild(filterElement);
+});
