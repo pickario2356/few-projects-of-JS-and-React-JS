@@ -122,7 +122,20 @@ main section .right .filter input::-webkit-slider-runnable-track {
   height: 3px;
 }
 canvas{
-  background: #000;
+  /* background: #000; */
   max-height: 80vh;
   max-width:90%;
+  display: none;
+}
+.presets{
+  display: flex;
+  flex-wrap: wrap;
+  gap:var(--gutter-sm)
+}
+.preset-head{
+  `
+}
+.selected{
+  background-color: var(--slider-thumb-color);
+  color: white;
 }
