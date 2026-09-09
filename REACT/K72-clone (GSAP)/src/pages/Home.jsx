@@ -1,5 +1,7 @@
 import React from "react";
 import Video from "../components/home/Video";
+import HomeBottomText from "../components/home/HomeBottomText";
+import HomeHeroText from "../components/home/HomeHeroText";
 
 const Home = () => {
   return (
@@ -7,8 +9,9 @@ const Home = () => {
       <div className="h-screen w-screen fixed">
         <Video />
       </div>
-      <div>
-        
+      <div className="h-full w-full relative flex flex-col">
+        <HomeHeroText />
+        <HomeBottomText />
       </div>
     </div>
   );
