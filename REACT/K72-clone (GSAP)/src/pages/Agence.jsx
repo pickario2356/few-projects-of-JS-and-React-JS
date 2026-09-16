@@ -2,7 +2,7 @@ import React from 'react'
 
 const Agence = () => {
   return (
-    <div>Agence</div>
+    <div className='text-black' >srjrahjnrtyjsrtj</div>
   )
 }
 
