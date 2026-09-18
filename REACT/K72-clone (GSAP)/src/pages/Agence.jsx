@@ -1,12 +1,32 @@
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import React, { useRef } from "react";
 
-const Agence = () => {
+gsap.registerPlugin(ScrollTrigger);
 
-  const imgaeDivRef = useRef(null)
+const Agence = () => {
+  const imgaeDivRef = useRef(null);
+
+  useGSAP(function(){
+    gsap.to(imgaeDivRef.current,{
+      scrollTrigger:{
+        trigger:imgaeDivRef.current,
+        markers:true,
+        start:'top 28%',
+        end:'top -70%',
+        pin:true,
+      }
+    })
+  })
+
   return (
     <div>
       <div className="section-1">
-        <div ref={imgaeDivRef} className="absolute overflow-hidden h-[22vw] rounded-3xl w-[15vw] top-48 left-[30vw] bg-red-500">
+        <div
+          ref={imgaeDivRef}
+          className="absolute overflow-hidden h-[22vw] rounded-3xl w-[15vw] top-48 left-[30vw] bg-red-500"
+        >
           <img
             className="h-full w-full object-cover"
             src="https://k72.ca/uploads/teamMembers/Carl_480x640-480x640.jpg"
