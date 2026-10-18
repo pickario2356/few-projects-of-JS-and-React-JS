@@ -29,12 +29,15 @@ const Agence = () => {
         end: "top -70%",
         scrub: true,
         pin: true,
+        onUpdate: function () {
+          // console.log("hehe");
+        },
       },
     });
   });
 
   return (
-    <div>
+    <div className="bg-[#0a0a0a] text-[#f5f5f5] h-full w-fit">
       <div className="section-1  ">
         <div
           ref={imgaeDivRef}
@@ -47,8 +50,8 @@ const Agence = () => {
             alt=""
           />
         </div>
-        <div className="relative text-black font-[font1]">
-          <div className="mt-[55vh]">
+        <div className="relative font-[font1]">
+          <div className="pt-[55vh]">
             <h1 className="text-[20vw] font-[620] text-center leading-[18vw] ">
               SEVEN7Y <br></br>
               TWO
