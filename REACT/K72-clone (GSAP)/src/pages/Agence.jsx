@@ -29,8 +29,11 @@ const Agence = () => {
         end: "top -70%",
         scrub: true,
         pin: true,
-        onUpdate: function () {
-          // console.log("hehe");
+        onUpdate: function (elem) {
+          let imageIndex = Math.floor(elem.progress * imageArray.length);
+          if (elem.progress < 1) {
+            imageRef.current.src = imageArray[imageIndex];
+          }
         },
       },
     });
