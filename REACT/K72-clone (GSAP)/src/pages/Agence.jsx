@@ -37,8 +37,13 @@ const Agence = () => {
         // markers: true,
         start: "top 28%",
         end: "top -70%",
-        scrub: true,
+        scrub: 1,
         pin: true,
+        pinSpacing: true,
+        pinReparent: true,
+        pinType: "transform",
+        anticipatePin: 1,
+        invalidateOnRefresh: true,
         onUpdate: function (elem) {
           const imageIndex = Math.floor(elem.progress * imageArray.length);
           // console.log(imageIndex);
