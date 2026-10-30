@@ -39,18 +39,23 @@ const Agence = () => {
         end: "top -70%",
         scrub: 1,
         pin: true,
-        pinSpacing: true,
-        pinReparent: true,
-        pinType: "transform",
-        anticipatePin: 1,
-        invalidateOnRefresh: true,
+        // pinSpacing: true,
+        // pinReparent: true,
+        // pinType: "transform",
+        // anticipatePin: 1,
+        // invalidateOnRefresh: true,
         onUpdate: function (elem) {
           const imageIndex = Math.floor(elem.progress * imageArray.length);
-          // console.log(imageIndex);
-          // console.log(imageRef);
           if (elem.progress < 1) {
             imageRef.current.src = imageArray[imageIndex];
           } // yaha one hone sai pehle hi if bnd ho ra
+          if (elem.progress < 1) {
+            const imageIndex =
+              window.scrollY < 5 // condition ? valueIfTrue : valueIfFalse
+                ? 0
+                : Math.floor(elem.progress * imageArray.length);
+            imageRef.current.src = imageArray[imageIndex];
+          }
         },
       },
     });

@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useLocation } from "react-router-dom";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const Stair = (props) => {
   const currentPath = useLocation().pathname;
@@ -36,8 +37,10 @@ const Stair = (props) => {
 
       gsap.from(pageRef.current, {
         opacity: 0,
-        delay: 1,
-        scale: 1.2,
+        delay: 1.3,
+        scale: 1.3,
+        clearProps: "transform",
+        onComplete: () => ScrollTrigger.refresh(),
       });
     },
     [currentPath],
