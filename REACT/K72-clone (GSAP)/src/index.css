@@ -12,3 +12,17 @@ body {
   background: #1e1e1e;
   overflow-x: hidden;
 }
+.moveX {
+  animation-name: movingAnimaiton;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+@keyframes movingAnimaiton {
+  from {
+    transform: translatex(0);
+  }
+  to {
+    transform: translatex(-100%);
+  }
+}
