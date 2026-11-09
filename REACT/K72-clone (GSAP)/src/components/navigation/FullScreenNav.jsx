@@ -146,7 +146,6 @@ const FullScreenNav = () => {
                 <img
                   className="h-22 w-60 shrink-0 object-cover rounded-full "
                   src="http://k72.ca/images/caseStudies/PJC/Thumbnails/PJC_SiteK72_Thumbnail_640x290.jpg?w=640&h=290&s=ac50a70feaaa2601b3aacad544c6045b"
-                  alt=""
                 />
                 <h2 className="font-[font1] whitespace-nowrap uppercase  leading-[0.8] pt-5 text-[8vw] text-center">
                   See Everything
@@ -170,7 +169,7 @@ const FullScreenNav = () => {
                   See Everything
                 </h2>
                 <img
-                  className="h-22 w-60 shrink-0 object-cover rounded-full "
+                  className="h-22 w-59 shrink-0 object-cover rounded-full "
                   src="https://k72.ca/images/caseStudies/iA_BRAND/Thumbnail.png?w=640&h=290&s=755b635c06d126151d64017fa1042a7c"
                   alt=""
                 />
