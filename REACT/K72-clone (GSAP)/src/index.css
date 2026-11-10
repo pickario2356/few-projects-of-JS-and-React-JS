@@ -18,6 +18,37 @@ body {
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
+/* .link {
+  overflow: hidden;
+  transition: all 0.3s;
+}
+.moveLink {
+  opacity: 0;
+  height: 0;
+  transition: all 0.3s;
+  visibility: hidden;
+} */
+.link {
+  position: relative;
+  overflow: hidden;
+}
+
+.moveLink {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s;
+}
+
+.link:hover .moveLink {
+  height: 100%;
+  opacity: 1;
+  visibility: visible;
+}
 @keyframes movingAnimaiton {
   from {
     transform: translatex(0);
